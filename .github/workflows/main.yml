@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - dev
+      - devAmu
   workflow_dispatch:
     inputs:
       version:
