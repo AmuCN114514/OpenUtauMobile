@@ -202,7 +202,7 @@ namespace OpenUtauMobile.DesktopUI.Views
                     Item("Editor.Stop", () => _main.ActiveEditor?.StopCommand.Execute().Subscribe(), () => CommandAvailable(editor => editor.StopCommand))),
                 Menu("Desktop.Tools", Item("SingerManagement.Title", () => Show(new SingerManagementViewModel(_main))), Item("Desktop.Tools", () => Show(new DesktopToolsViewModel(_main))),
                     Item("DependencyManager.Title", () => Show(new DependencyManagerViewModel(_main))), Item("Settings.Title", () => Show(new SettingsViewModel(_main)))),
-                Menu("Desktop.Help", Item("About.Title", () => Show(new AboutViewModel(_main))), Item("ExportLogs.Title", () => Show(new ExportLogsViewModel(_main))))
+                Menu("Desktop.Help", Item("Help.Title", () => Show(new HelpViewModel(_main))), Item("About.Title", () => Show(new AboutViewModel(_main))), Item("ExportLogs.Title", () => Show(new ExportLogsViewModel(_main))))
             };
         }
         private MenuItem PathItem(string path, ProjectOpenKind kind)

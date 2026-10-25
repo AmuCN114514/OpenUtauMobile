@@ -273,6 +273,9 @@
     <Style Selector=".DesktopSettings Border.TopBar, .DesktopSettings Button.NavToggle, .DesktopSettings Button.DesktopBack">
         <Setter Property="IsVisible" Value="False" />
     </Style>
+    <Style Selector=".DesktopHelp Border.TopBar, .DesktopHelp Button.DesktopBack">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
     <Style Selector=".DesktopSettings Border.SettingCard">
         <Setter Property="Padding" Value="16,12" />
         <Setter Property="CornerRadius" Value="12" />

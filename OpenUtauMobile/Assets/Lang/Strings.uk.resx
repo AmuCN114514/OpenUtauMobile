@@ -890,8 +890,95 @@
   <data name="Options.About.Desc" xml:space="preserve">
     <value>Версія, ліцензія, подяки</value>
   </data>
-  <data name="Options.Toast.HelpNotImpl" xml:space="preserve">
-    <value>Сторінку довідки ще не реалізовано</value>
+  <data name="Help.Title" xml:space="preserve">
+    <value>Довідка та посібники</value>
+  </data>
+  <data name="Help.Intro" xml:space="preserve">
+    <value>Від створення проєкту до експорту аудіо — тут зібрано основні дії та відповіді на часті запитання.</value>
+  </data>
+  <data name="Help.QuickStart.Title" xml:space="preserve">
+    <value>Швидкий старт</value>
+  </data>
+  <data name="Help.Step.New.Title" xml:space="preserve">
+    <value>Створіть або відкрийте проєкт</value>
+  </data>
+  <data name="Help.Step.New.Desc" xml:space="preserve">
+    <value>На головній натисніть «Створити», щоб почати з порожнього проєкту чи шаблону, або «Відкрити», щоб завантажити наявний файл .ustx.</value>
+  </data>
+  <data name="Help.Step.Singer.Title" xml:space="preserve">
+    <value>Встановіть виконавця</value>
+  </data>
+  <data name="Help.Step.Singer.Desc" xml:space="preserve">
+    <value>Відкрийте «Виконавці» на головній або «Параметри → Керування залежностями», щоб встановити банки голосів і залежності.</value>
+  </data>
+  <data name="Help.Step.Note.Title" xml:space="preserve">
+    <value>Редагуйте ноти</value>
+  </data>
+  <data name="Help.Step.Note.Desc" xml:space="preserve">
+    <value>Додавайте ноти й вводьте текст у піано-ролі; перетягуйте, щоб змінити висоту та тривалість.</value>
+  </data>
+  <data name="Help.Step.Render.Title" xml:space="preserve">
+    <value>Виберіть рендеринг</value>
+  </data>
+  <data name="Help.Step.Render.Desc" xml:space="preserve">
+    <value>Для кожної доріжки виберіть виконавця, фонемізатор і рендерер, потім за потреби налаштуйте параметри та вирази.</value>
+  </data>
+  <data name="Help.Step.Export.Title" xml:space="preserve">
+    <value>Збереження та експорт</value>
+  </data>
+  <data name="Help.Step.Export.Desc" xml:space="preserve">
+    <value>Збережіть проєкт у форматі .ustx або експортуйте аудіо через «Інші дії → Експорт».</value>
+  </data>
+  <data name="Help.Faq.Title" xml:space="preserve">
+    <value>Часті запитання</value>
+  </data>
+  <data name="Help.Faq.Slice.Q" xml:space="preserve">
+    <value>Я переходжу зі старої версії. Як створити частину?</value>
+  </data>
+  <data name="Help.Faq.Slice.A" xml:space="preserve">
+    <value>Двічі торкніться доріжки, щоб створити частину.</value>
+  </data>
+  <data name="Help.Faq.Voicebank.Q" xml:space="preserve">
+    <value>Чому встановлений банк голосів не працює?</value>
+  </data>
+  <data name="Help.Faq.Voicebank.A" xml:space="preserve">
+    <value>Можливо, під час встановлення вибрано неправильне кодування. Спробуйте інші кодування, доки не зникнуть спотворені символи.</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.Q" xml:space="preserve">
+    <value>Кодування вибрано правильно, але виконавець усе одно не звучить.</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.A" xml:space="preserve">
+    <value>Спробуйте інший фонемізатор. Для японських банків голосів використовуйте «JA VCV&amp;CVVC», для китайських — «ZH CVVC». Для банків DIFFSINGER спробуйте фонемізатор із позначкою «DIFFS».</value>
+  </data>
+  <data name="Help.Faq.Import.Q" xml:space="preserve">
+    <value>Чи можна імпортувати локальні проєкти?</value>
+  </data>
+  <data name="Help.Faq.Import.A" xml:space="preserve">
+    <value>Так, але наразі підтримуються лише ust, ustx і midi. Інші формати (наприклад, svp чи vsqx) спершу перетворіть за допомогою UTAFormatix3: https://sdercolin.github.io/utaformatix3/</value>
+  </data>
+  <data name="Help.Faq.Apple.Q" xml:space="preserve">
+    <value>Як використовувати на пристроях Apple?</value>
+  </data>
+  <data name="Help.Faq.Apple.A" xml:space="preserve">
+    <value>Наразі можна лише самостійно зібрати IPA-пакет. Для встановлення також потрібен джейлбрейк (сайдлоадинг пов'язаний із ризиком, і Apple обмежує такі дії).</value>
+  </data>
+  <data name="Help.Resources.Title" xml:space="preserve">
+    <value>Додаткові ресурси</value>
+  </data>
+  <data name="Help.Link.Repository" xml:space="preserve">
+    <value>Домашня сторінка проєкту</value>
+  </data>
+  <data name="Help.Link.Repository.Desc" xml:space="preserve">
+    <value>Вихідний код, оновлення та примітки до випусків</value>
+  </data>
+  <data name="Help.Link.Issues" xml:space="preserve">
+    <value>Повідомити про проблему</value>
+  </data>
+  <data name="Help.Link.Issues.Desc" xml:space="preserve">
+    <value>Повідомити про помилку або запропонувати функцію</value>
+  </data>
+  <data name="Help.Toast.OpenLinkFailed" xml:space="preserve">
+    <value>Не вдалося відкрити посилання</value>
   </data>
   <data name="Options.Toast.ExportLogNotImpl" xml:space="preserve">
     <value>Експорт журналу ще не реалізовано</value>

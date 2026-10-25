@@ -967,8 +967,95 @@
   <data name="Options.About.Desc" xml:space="preserve">
     <value>版本、许可证、致谢</value>
   </data>
-  <data name="Options.Toast.HelpNotImpl" xml:space="preserve">
-    <value>帮助与教程页面尚未实现</value>
+  <data name="Help.Title" xml:space="preserve">
+    <value>帮助与教程</value>
+  </data>
+  <data name="Help.Intro" xml:space="preserve">
+    <value>从新建工程到导出音频，这里汇总了常用操作与常见问题的解答。</value>
+  </data>
+  <data name="Help.QuickStart.Title" xml:space="preserve">
+    <value>快速上手</value>
+  </data>
+  <data name="Help.Step.New.Title" xml:space="preserve">
+    <value>新建或打开工程</value>
+  </data>
+  <data name="Help.Step.New.Desc" xml:space="preserve">
+    <value>在主页点击“新建”创建空白或模板工程，或点击“打开”载入已有的 .ustx 文件。</value>
+  </data>
+  <data name="Help.Step.Singer.Title" xml:space="preserve">
+    <value>安装歌手</value>
+  </data>
+  <data name="Help.Step.Singer.Desc" xml:space="preserve">
+    <value>在主页进入“歌手”，或使用“选项 → 依赖关系管理”安装声库与依赖。</value>
+  </data>
+  <data name="Help.Step.Note.Title" xml:space="preserve">
+    <value>编辑音符</value>
+  </data>
+  <data name="Help.Step.Note.Desc" xml:space="preserve">
+    <value>在钢琴卷帘中添加音符并填写歌词，拖动可调整音高与时长。</value>
+  </data>
+  <data name="Help.Step.Render.Title" xml:space="preserve">
+    <value>选择渲染</value>
+  </data>
+  <data name="Help.Step.Render.Desc" xml:space="preserve">
+    <value>在轨道中选择歌手、音素器与渲染器，并按需调整参数与表情。</value>
+  </data>
+  <data name="Help.Step.Export.Title" xml:space="preserve">
+    <value>保存与导出</value>
+  </data>
+  <data name="Help.Step.Export.Desc" xml:space="preserve">
+    <value>保存工程为 .ustx，或在“更多操作 → 导出”中导出音频。</value>
+  </data>
+  <data name="Help.Faq.Title" xml:space="preserve">
+    <value>常见问题</value>
+  </data>
+  <data name="Help.Faq.Slice.Q" xml:space="preserve">
+    <value>我是从旧版过来的，怎么创建分片？</value>
+  </data>
+  <data name="Help.Faq.Slice.A" xml:space="preserve">
+    <value>在轨道双击即可。</value>
+  </data>
+  <data name="Help.Faq.Voicebank.Q" xml:space="preserve">
+    <value>为什么我安装的声库不能使用？</value>
+  </data>
+  <data name="Help.Faq.Voicebank.A" xml:space="preserve">
+    <value>可能是安装时编码选错了。试试其他编码，直到没有乱码。</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.Q" xml:space="preserve">
+    <value>明明编码选对了，歌手却还是不能发声？</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.A" xml:space="preserve">
+    <value>建议更换一下音素器。日文声库建议用“JA VCV&amp;CVVC”，中文建议用“ZH CVVC”。如果是 DIFFSINGER 声库，建议试一下标了“DIFFS”的音素器。</value>
+  </data>
+  <data name="Help.Faq.Import.Q" xml:space="preserve">
+    <value>能导入本地工程吗？</value>
+  </data>
+  <data name="Help.Faq.Import.A" xml:space="preserve">
+    <value>可以，但目前仅支持 ust、ustx 和 midi。其他格式（如 svp、vsqx 等）建议先使用 UTAFormatix3 转换：https://sdercolin.github.io/utaformatix3/</value>
+  </data>
+  <data name="Help.Faq.Apple.Q" xml:space="preserve">
+    <value>如何在苹果设备上使用？</value>
+  </data>
+  <data name="Help.Faq.Apple.A" xml:space="preserve">
+    <value>目前只能自行构建为 IPA 包，安装还需要越狱（侧载存在风险，且 Apple 官方正在限制此类行为）。</value>
+  </data>
+  <data name="Help.Resources.Title" xml:space="preserve">
+    <value>更多资源</value>
+  </data>
+  <data name="Help.Link.Repository" xml:space="preserve">
+    <value>项目主页</value>
+  </data>
+  <data name="Help.Link.Repository.Desc" xml:space="preserve">
+    <value>查看源码、更新与发布说明</value>
+  </data>
+  <data name="Help.Link.Issues" xml:space="preserve">
+    <value>问题反馈</value>
+  </data>
+  <data name="Help.Link.Issues.Desc" xml:space="preserve">
+    <value>报告 Bug 或提出功能建议</value>
+  </data>
+  <data name="Help.Toast.OpenLinkFailed" xml:space="preserve">
+    <value>无法打开链接</value>
   </data>
   <data name="Options.Toast.ExportLogNotImpl" xml:space="preserve">
     <value>日志导出功能尚未实现</value>

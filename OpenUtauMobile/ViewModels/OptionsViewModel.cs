@@ -1,6 +1,4 @@
 ﻿using System.Reactive;
-using OpenUtauMobile.Helpers;
-using OpenUtauMobile.Services.Dialogs;
 using ReactiveUI;
 
 namespace OpenUtauMobile.ViewModels;
@@ -43,8 +41,7 @@ public class OptionsViewModel : NavigateViewModelBase
 
     private void OnOpenHelp()
     {
-        // TODO: Navigator.Navigate(new HelpViewModel(Navigator));
-        ToastService.Enqueue(L.S("Options.Toast.HelpNotImpl"));
+        Navigator.Navigate(new HelpViewModel(Navigator));
     }
 
     private void OnOpenExportLogs()

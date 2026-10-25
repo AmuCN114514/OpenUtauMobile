@@ -890,8 +890,95 @@
   <data name="Options.About.Desc" xml:space="preserve">
     <value>Версия, лицензия, благодарности</value>
   </data>
-  <data name="Options.Toast.HelpNotImpl" xml:space="preserve">
-    <value>Страница справки ещё не реализована</value>
+  <data name="Help.Title" xml:space="preserve">
+    <value>Справка и руководства</value>
+  </data>
+  <data name="Help.Intro" xml:space="preserve">
+    <value>От создания проекта до экспорта аудио — здесь собраны основные действия и ответы на частые вопросы.</value>
+  </data>
+  <data name="Help.QuickStart.Title" xml:space="preserve">
+    <value>Быстрый старт</value>
+  </data>
+  <data name="Help.Step.New.Title" xml:space="preserve">
+    <value>Создайте или откройте проект</value>
+  </data>
+  <data name="Help.Step.New.Desc" xml:space="preserve">
+    <value>На главной нажмите «Создать», чтобы начать с пустого проекта или шаблона, либо «Открыть», чтобы загрузить существующий файл .ustx.</value>
+  </data>
+  <data name="Help.Step.Singer.Title" xml:space="preserve">
+    <value>Установите певца</value>
+  </data>
+  <data name="Help.Step.Singer.Desc" xml:space="preserve">
+    <value>Откройте «Певцы» на главной или «Параметры → Управление зависимостями», чтобы установить банки голосов и зависимости.</value>
+  </data>
+  <data name="Help.Step.Note.Title" xml:space="preserve">
+    <value>Редактируйте ноты</value>
+  </data>
+  <data name="Help.Step.Note.Desc" xml:space="preserve">
+    <value>Добавляйте ноты и вводите текст в пиано-ролле; перетаскивайте, чтобы изменить высоту и длительность.</value>
+  </data>
+  <data name="Help.Step.Render.Title" xml:space="preserve">
+    <value>Выберите рендеринг</value>
+  </data>
+  <data name="Help.Step.Render.Desc" xml:space="preserve">
+    <value>Для каждой дорожки выберите певца, фонемизатор и рендерер, затем при необходимости настройте параметры и выражения.</value>
+  </data>
+  <data name="Help.Step.Export.Title" xml:space="preserve">
+    <value>Сохранение и экспорт</value>
+  </data>
+  <data name="Help.Step.Export.Desc" xml:space="preserve">
+    <value>Сохраните проект в формате .ustx или экспортируйте аудио через «Другие действия → Экспорт».</value>
+  </data>
+  <data name="Help.Faq.Title" xml:space="preserve">
+    <value>Частые вопросы</value>
+  </data>
+  <data name="Help.Faq.Slice.Q" xml:space="preserve">
+    <value>Я перехожу со старой версии. Как создать часть?</value>
+  </data>
+  <data name="Help.Faq.Slice.A" xml:space="preserve">
+    <value>Дважды коснитесь дорожки, чтобы создать часть.</value>
+  </data>
+  <data name="Help.Faq.Voicebank.Q" xml:space="preserve">
+    <value>Почему установленный банк голосов не работает?</value>
+  </data>
+  <data name="Help.Faq.Voicebank.A" xml:space="preserve">
+    <value>Возможно, при установке была выбрана неверная кодировка. Пробуйте другие кодировки, пока не исчезнут искажённые символы.</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.Q" xml:space="preserve">
+    <value>Кодировка выбрана правильно, но певец всё равно не звучит.</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.A" xml:space="preserve">
+    <value>Попробуйте другой фонемизатор. Для японских банков голосов используйте «JA VCV&amp;CVVC», для китайских — «ZH CVVC». Для банков DIFFSINGER попробуйте фонемизатор с пометкой «DIFFS».</value>
+  </data>
+  <data name="Help.Faq.Import.Q" xml:space="preserve">
+    <value>Можно импортировать локальные проекты?</value>
+  </data>
+  <data name="Help.Faq.Import.A" xml:space="preserve">
+    <value>Да, но сейчас поддерживаются только ust, ustx и midi. Другие форматы (например, svp или vsqx) сначала преобразуйте с помощью UTAFormatix3: https://sdercolin.github.io/utaformatix3/</value>
+  </data>
+  <data name="Help.Faq.Apple.Q" xml:space="preserve">
+    <value>Как использовать на устройствах Apple?</value>
+  </data>
+  <data name="Help.Faq.Apple.A" xml:space="preserve">
+    <value>Сейчас можно только самостоятельно собрать IPA-пакет. Для установки также потребуется джейлбрейк (сайдлоадинг связан с риском, и Apple ограничивает такие действия).</value>
+  </data>
+  <data name="Help.Resources.Title" xml:space="preserve">
+    <value>Дополнительные ресурсы</value>
+  </data>
+  <data name="Help.Link.Repository" xml:space="preserve">
+    <value>Домашняя страница проекта</value>
+  </data>
+  <data name="Help.Link.Repository.Desc" xml:space="preserve">
+    <value>Исходный код, обновления и примечания к выпускам</value>
+  </data>
+  <data name="Help.Link.Issues" xml:space="preserve">
+    <value>Сообщить о проблеме</value>
+  </data>
+  <data name="Help.Link.Issues.Desc" xml:space="preserve">
+    <value>Сообщить об ошибке или предложить функцию</value>
+  </data>
+  <data name="Help.Toast.OpenLinkFailed" xml:space="preserve">
+    <value>Не удалось открыть ссылку</value>
   </data>
   <data name="Options.Toast.ExportLogNotImpl" xml:space="preserve">
     <value>Экспорт журнала ещё не реализован</value>

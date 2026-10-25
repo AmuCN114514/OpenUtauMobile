@@ -44,6 +44,13 @@ namespace OpenUtauMobile.DesktopUI.Views
                 (settings, _, _) => Settings(settings)),
             [typeof(AboutViewModel)] = Route<AboutViewModel>("About.Title", DesktopWindowProfile.About,
                 (about, _, _) => Utility("About.Title", new DesktopAboutPage(about))),
+            [typeof(HelpViewModel)] = Route<HelpViewModel>("Help.Title", DesktopWindowProfile.Standard,
+                (help, _, _) =>
+                {
+                    HelpView view = new() { DataContext = help };
+                    view.Classes.Add("DesktopHelp");
+                    return Utility("Help.Title", view, new Thickness(0));
+                }),
             [typeof(ExportLogsViewModel)] = Route<ExportLogsViewModel>("ExportLogs.Title", DesktopWindowProfile.Logs,
                 (logs, _, _) => Utility("ExportLogs.Title", new DesktopExportLogsPage(logs))),
             [typeof(ClassicSingerSetupViewModel)] = Route<ClassicSingerSetupViewModel>("SingerSetup.Title", DesktopWindowProfile.SingerSetup,

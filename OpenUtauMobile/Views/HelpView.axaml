@@ -1,0 +1,362 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:OpenUtauMobile.ViewModels"
+             xmlns:iconPacks="https://github.com/MahApps/IconPacks.Avalonia"
+             xmlns:foundation="clr-namespace:OpenUtauMobile.Themes.OpenUtauMobile.Tokens.Foundation"
+             xmlns:semantic="clr-namespace:OpenUtauMobile.Themes.OpenUtauMobile.Tokens.Semantic"
+             xmlns:components="clr-namespace:OpenUtauMobile.Themes.OpenUtauMobile.Tokens.Components"
+             mc:Ignorable="d"
+             d:DesignWidth="400"
+             d:DesignHeight="880"
+             x:Class="OpenUtauMobile.Views.HelpView"
+             x:DataType="vm:HelpViewModel">
+    <UserControl.Resources>
+        <!-- 用 OPUM 语义色覆盖 Expander 默认的系统配色 -->
+        <SolidColorBrush x:Key="ExpanderHeaderBackground" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderHeaderBackgroundPointerOver" Color="{DynamicResource Sem.Color.SurfaceContainerHigh}" />
+        <SolidColorBrush x:Key="ExpanderHeaderBackgroundPressed" Color="{DynamicResource Sem.Color.SurfaceContainerHigh}" />
+        <SolidColorBrush x:Key="ExpanderHeaderBorderBrush" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderHeaderBorderBrushPointerOver" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderHeaderBorderBrushPressed" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderChevronBackground" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderChevronBackgroundPointerOver" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderChevronBackgroundPressed" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderChevronBorderBrush" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderChevronBorderBrushPointerOver" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderChevronBorderBrushPressed" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderChevronForeground" Color="{DynamicResource Sem.Color.OnSurfaceVariant}" />
+        <SolidColorBrush x:Key="ExpanderChevronForegroundPointerOver" Color="{DynamicResource Sem.Color.OnSurface}" />
+        <SolidColorBrush x:Key="ExpanderChevronForegroundPressed" Color="{DynamicResource Sem.Color.OnSurface}" />
+        <SolidColorBrush x:Key="ExpanderContentBackground" Color="Transparent" />
+        <SolidColorBrush x:Key="ExpanderContentBorderBrush" Color="Transparent" />
+    </UserControl.Resources>
+
+    <UserControl.Styles>
+        <Style Selector="TextBlock.SectionTitle">
+            <Setter Property="FontSize" Value="{x:Static semantic:TypographyTokens.TitleMSize}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{DynamicResource Sem.Color.OnSurface}" />
+            <Setter Property="Margin" Value="4,8,0,0" />
+        </Style>
+        <Style Selector="Border.Section">
+            <Setter Property="Background" Value="{DynamicResource Sem.Color.SurfaceContainerLow}" />
+            <Setter Property="CornerRadius" Value="{x:Static foundation:ShapeTokens.CornerXL}" />
+            <Setter Property="ClipToBounds" Value="True" />
+        </Style>
+        <Style Selector="Border.Divider">
+            <Setter Property="Height" Value="1" />
+            <Setter Property="Opacity" Value="0.08" />
+            <Setter Property="Background" Value="{DynamicResource Sem.Color.OnSurfaceVariant}" />
+        </Style>
+        <Style Selector="TextBlock.StepTitle">
+            <Setter Property="FontSize" Value="{x:Static semantic:TypographyTokens.BodyLSize}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="TextBlock.StepDesc">
+            <Setter Property="FontSize" Value="{x:Static semantic:TypographyTokens.BodyMSize}" />
+            <Setter Property="Foreground" Value="{DynamicResource Sem.Color.OnSurfaceVariant}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="TextBlock.FaqQuestion">
+            <Setter Property="FontSize" Value="{x:Static semantic:TypographyTokens.BodyLSize}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{DynamicResource Sem.Color.OnSurface}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="TextBlock.FaqAnswer">
+            <Setter Property="FontSize" Value="{x:Static semantic:TypographyTokens.BodyMSize}" />
+            <Setter Property="Foreground" Value="{DynamicResource Sem.Color.OnSurfaceVariant}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="Expander.Faq">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="MinWidth" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="Padding" Value="16,0,16,16" />
+        </Style>
+        <Style Selector="TextBlock.LinkTitle">
+            <Setter Property="FontSize" Value="{x:Static semantic:TypographyTokens.BodyLSize}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="TextBlock.LinkDesc">
+            <Setter Property="FontSize" Value="{x:Static semantic:TypographyTokens.LabelSSize}" />
+            <Setter Property="Foreground" Value="{DynamicResource Sem.Color.OnSurfaceVariant}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+    </UserControl.Styles>
+
+    <Panel Background="{DynamicResource Sem.Color.Surface}">
+        <DockPanel>
+            <!-- 顶栏 -->
+            <Border DockPanel.Dock="Top" Classes="TopBar">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="{x:Static foundation:LayoutTokens.SpaceS}">
+                    <Button Grid.Column="0"
+                            Classes="TopBarBtn DesktopBack"
+                            Command="{Binding BackCommand}"
+                            ToolTip.Tip="{DynamicResource Common.Back}"
+                            Content="{iconPacks:PhosphorIcons ArrowLeft}" />
+                    <TextBlock Grid.Column="1" Classes="TopBarTitle" Text="{DynamicResource Help.Title}" />
+                </Grid>
+            </Border>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled">
+                <Border Padding="16,16,16,24">
+                    <StackPanel MaxWidth="720"
+                                HorizontalAlignment="Center"
+                                Spacing="{x:Static foundation:LayoutTokens.SpaceM}">
+                        <TextBlock Text="{DynamicResource Help.Intro}"
+                                   FontSize="{x:Static semantic:TypographyTokens.BodyMSize}"
+                                   Foreground="{DynamicResource Sem.Color.OnSurfaceVariant}"
+                                   TextWrapping="Wrap" />
+
+                        <!-- 快速上手 -->
+                        <TextBlock Classes="SectionTitle" Text="{DynamicResource Help.QuickStart.Title}" />
+                        <Border Classes="Section" Padding="{x:Static foundation:LayoutTokens.InsetM}">
+                            <StackPanel Spacing="{x:Static foundation:LayoutTokens.SpaceM}">
+                                <Grid ColumnDefinitions="36,*" ColumnSpacing="12">
+                                    <Border Width="28"
+                                            Height="28"
+                                            CornerRadius="{x:Static foundation:ShapeTokens.CornerFull}"
+                                            Background="{DynamicResource Sem.Color.PrimaryContainer}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Top">
+                                        <TextBlock Text="1"
+                                                   FontSize="{x:Static semantic:TypographyTokens.LabelLSize}"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource Sem.Color.Primary}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" Spacing="{x:Static foundation:LayoutTokens.SpaceXS}">
+                                        <TextBlock Classes="StepTitle" Text="{DynamicResource Help.Step.New.Title}" />
+                                        <TextBlock Classes="StepDesc" Text="{DynamicResource Help.Step.New.Desc}" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="36,*" ColumnSpacing="12">
+                                    <Border Width="28"
+                                            Height="28"
+                                            CornerRadius="{x:Static foundation:ShapeTokens.CornerFull}"
+                                            Background="{DynamicResource Sem.Color.PrimaryContainer}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Top">
+                                        <TextBlock Text="2"
+                                                   FontSize="{x:Static semantic:TypographyTokens.LabelLSize}"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource Sem.Color.Primary}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" Spacing="{x:Static foundation:LayoutTokens.SpaceXS}">
+                                        <TextBlock Classes="StepTitle" Text="{DynamicResource Help.Step.Singer.Title}" />
+                                        <TextBlock Classes="StepDesc" Text="{DynamicResource Help.Step.Singer.Desc}" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="36,*" ColumnSpacing="12">
+                                    <Border Width="28"
+                                            Height="28"
+                                            CornerRadius="{x:Static foundation:ShapeTokens.CornerFull}"
+                                            Background="{DynamicResource Sem.Color.PrimaryContainer}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Top">
+                                        <TextBlock Text="3"
+                                                   FontSize="{x:Static semantic:TypographyTokens.LabelLSize}"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource Sem.Color.Primary}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" Spacing="{x:Static foundation:LayoutTokens.SpaceXS}">
+                                        <TextBlock Classes="StepTitle" Text="{DynamicResource Help.Step.Note.Title}" />
+                                        <TextBlock Classes="StepDesc" Text="{DynamicResource Help.Step.Note.Desc}" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="36,*" ColumnSpacing="12">
+                                    <Border Width="28"
+                                            Height="28"
+                                            CornerRadius="{x:Static foundation:ShapeTokens.CornerFull}"
+                                            Background="{DynamicResource Sem.Color.PrimaryContainer}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Top">
+                                        <TextBlock Text="4"
+                                                   FontSize="{x:Static semantic:TypographyTokens.LabelLSize}"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource Sem.Color.Primary}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" Spacing="{x:Static foundation:LayoutTokens.SpaceXS}">
+                                        <TextBlock Classes="StepTitle" Text="{DynamicResource Help.Step.Render.Title}" />
+                                        <TextBlock Classes="StepDesc" Text="{DynamicResource Help.Step.Render.Desc}" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="36,*" ColumnSpacing="12">
+                                    <Border Width="28"
+                                            Height="28"
+                                            CornerRadius="{x:Static foundation:ShapeTokens.CornerFull}"
+                                            Background="{DynamicResource Sem.Color.PrimaryContainer}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Top">
+                                        <TextBlock Text="5"
+                                                   FontSize="{x:Static semantic:TypographyTokens.LabelLSize}"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource Sem.Color.Primary}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" Spacing="{x:Static foundation:LayoutTokens.SpaceXS}">
+                                        <TextBlock Classes="StepTitle" Text="{DynamicResource Help.Step.Export.Title}" />
+                                        <TextBlock Classes="StepDesc" Text="{DynamicResource Help.Step.Export.Desc}" />
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- 常见问题 -->
+                        <TextBlock Classes="SectionTitle" Text="{DynamicResource Help.Faq.Title}" />
+                        <Border Classes="Section">
+                            <StackPanel>
+                                <Expander Classes="Faq">
+                                    <Expander.Header>
+                                        <TextBlock Classes="FaqQuestion" Text="{DynamicResource Help.Faq.Slice.Q}" />
+                                    </Expander.Header>
+                                    <TextBlock Classes="FaqAnswer" Text="{DynamicResource Help.Faq.Slice.A}" />
+                                </Expander>
+                                <Border Classes="Divider" />
+                                <Expander Classes="Faq">
+                                    <Expander.Header>
+                                        <TextBlock Classes="FaqQuestion" Text="{DynamicResource Help.Faq.Voicebank.Q}" />
+                                    </Expander.Header>
+                                    <TextBlock Classes="FaqAnswer" Text="{DynamicResource Help.Faq.Voicebank.A}" />
+                                </Expander>
+                                <Border Classes="Divider" />
+                                <Expander Classes="Faq">
+                                    <Expander.Header>
+                                        <TextBlock Classes="FaqQuestion" Text="{DynamicResource Help.Faq.Phonemizer.Q}" />
+                                    </Expander.Header>
+                                    <TextBlock Classes="FaqAnswer" Text="{DynamicResource Help.Faq.Phonemizer.A}" />
+                                </Expander>
+                                <Border Classes="Divider" />
+                                <Expander Classes="Faq">
+                                    <Expander.Header>
+                                        <TextBlock Classes="FaqQuestion" Text="{DynamicResource Help.Faq.Import.Q}" />
+                                    </Expander.Header>
+                                    <TextBlock Classes="FaqAnswer" Text="{DynamicResource Help.Faq.Import.A}" />
+                                </Expander>
+                                <Border Classes="Divider" />
+                                <Expander Classes="Faq">
+                                    <Expander.Header>
+                                        <TextBlock Classes="FaqQuestion" Text="{DynamicResource Help.Faq.Apple.Q}" />
+                                    </Expander.Header>
+                                    <TextBlock Classes="FaqAnswer" Text="{DynamicResource Help.Faq.Apple.A}" />
+                                </Expander>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- 更多资源 -->
+                        <TextBlock Classes="SectionTitle" Text="{DynamicResource Help.Resources.Title}" />
+                        <Border Classes="Section">
+                            <StackPanel>
+                                <Button Classes="OptionEntry" Command="{Binding OpenRepositoryCommand}">
+                                    <Border Padding="16,4,12,4">
+                                        <Grid ColumnDefinitions="44,*,Auto"
+                                              ColumnSpacing="12"
+                                              MinHeight="{x:Static components:OptionEntryTokens.MinHeight}">
+                                            <Panel Grid.Column="0"
+                                                   Width="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   Height="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center">
+                                                <Border Width="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                        Height="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                        CornerRadius="{x:Static foundation:ShapeTokens.CornerL}"
+                                                        Background="{DynamicResource Sem.Color.PrimaryContainer}" />
+                                                <iconPacks:PackIconPhosphorIcons Width="{x:Static semantic:IconTokens.Compact}"
+                                                                                  Height="{x:Static semantic:IconTokens.Compact}"
+                                                                                  HorizontalAlignment="Center"
+                                                                                  VerticalAlignment="Center"
+                                                                                  Foreground="{DynamicResource Sem.Color.Primary}"
+                                                                                  Kind="GlobeSimple" />
+                                            </Panel>
+                                            <StackPanel Grid.Column="1"
+                                                        VerticalAlignment="Center"
+                                                        Spacing="{x:Static foundation:LayoutTokens.SpaceXS}">
+                                                <TextBlock Classes="LinkTitle" Text="{DynamicResource Help.Link.Repository}" />
+                                                <TextBlock Classes="LinkDesc" Text="{DynamicResource Help.Link.Repository.Desc}" />
+                                            </StackPanel>
+                                            <Panel Grid.Column="2"
+                                                   Width="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   Height="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center">
+                                                <iconPacks:PackIconPhosphorIcons Width="14"
+                                                                                  Height="14"
+                                                                                  VerticalAlignment="Center"
+                                                                                  Foreground="{DynamicResource Sem.Color.OnSurfaceVariant}"
+                                                                                  Kind="ArrowSquareOut" />
+                                            </Panel>
+                                        </Grid>
+                                    </Border>
+                                </Button>
+                                <Border Classes="Divider" Margin="72,0,16,0" />
+                                <Button Classes="OptionEntry" Command="{Binding OpenIssuesCommand}">
+                                    <Border Padding="16,4,12,4">
+                                        <Grid ColumnDefinitions="44,*,Auto"
+                                              ColumnSpacing="12"
+                                              MinHeight="{x:Static components:OptionEntryTokens.MinHeight}">
+                                            <Panel Grid.Column="0"
+                                                   Width="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   Height="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center">
+                                                <Border Width="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                        Height="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                        CornerRadius="{x:Static foundation:ShapeTokens.CornerL}"
+                                                        Background="{DynamicResource Sem.Color.PrimaryContainer}" />
+                                                <iconPacks:PackIconPhosphorIcons Width="{x:Static semantic:IconTokens.Compact}"
+                                                                                  Height="{x:Static semantic:IconTokens.Compact}"
+                                                                                  HorizontalAlignment="Center"
+                                                                                  VerticalAlignment="Center"
+                                                                                  Foreground="{DynamicResource Sem.Color.Primary}"
+                                                                                  Kind="Bug" />
+                                            </Panel>
+                                            <StackPanel Grid.Column="1"
+                                                        VerticalAlignment="Center"
+                                                        Spacing="{x:Static foundation:LayoutTokens.SpaceXS}">
+                                                <TextBlock Classes="LinkTitle" Text="{DynamicResource Help.Link.Issues}" />
+                                                <TextBlock Classes="LinkDesc" Text="{DynamicResource Help.Link.Issues.Desc}" />
+                                            </StackPanel>
+                                            <Panel Grid.Column="2"
+                                                   Width="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   Height="{x:Static components:OptionEntryTokens.IconContainerSize}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center">
+                                                <iconPacks:PackIconPhosphorIcons Width="14"
+                                                                                  Height="14"
+                                                                                  VerticalAlignment="Center"
+                                                                                  Foreground="{DynamicResource Sem.Color.OnSurfaceVariant}"
+                                                                                  Kind="ArrowSquareOut" />
+                                            </Panel>
+                                        </Grid>
+                                    </Border>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </ScrollViewer>
+        </DockPanel>
+    </Panel>
+</UserControl>

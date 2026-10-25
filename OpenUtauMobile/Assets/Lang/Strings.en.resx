@@ -967,8 +967,95 @@
   <data name="Options.About.Desc" xml:space="preserve">
     <value>Version, license, credits</value>
   </data>
-  <data name="Options.Toast.HelpNotImpl" xml:space="preserve">
-    <value>Help page not implemented yet</value>
+  <data name="Help.Title" xml:space="preserve">
+    <value>Help &amp; Tutorials</value>
+  </data>
+  <data name="Help.Intro" xml:space="preserve">
+    <value>Everything from creating a project to exporting audio, plus answers to common questions.</value>
+  </data>
+  <data name="Help.QuickStart.Title" xml:space="preserve">
+    <value>Quick start</value>
+  </data>
+  <data name="Help.Step.New.Title" xml:space="preserve">
+    <value>Create or open a project</value>
+  </data>
+  <data name="Help.Step.New.Desc" xml:space="preserve">
+    <value>On Home, tap “New” to start a blank or template project, or “Open” to load an existing .ustx file.</value>
+  </data>
+  <data name="Help.Step.Singer.Title" xml:space="preserve">
+    <value>Install a singer</value>
+  </data>
+  <data name="Help.Step.Singer.Desc" xml:space="preserve">
+    <value>Go to “Singers” on Home, or use “Options → Dependency Management” to install voice banks and dependencies.</value>
+  </data>
+  <data name="Help.Step.Note.Title" xml:space="preserve">
+    <value>Edit notes</value>
+  </data>
+  <data name="Help.Step.Note.Desc" xml:space="preserve">
+    <value>Add notes and enter lyrics in the piano roll; drag to adjust pitch and duration.</value>
+  </data>
+  <data name="Help.Step.Render.Title" xml:space="preserve">
+    <value>Choose rendering</value>
+  </data>
+  <data name="Help.Step.Render.Desc" xml:space="preserve">
+    <value>Pick a singer, phonemizer, and renderer for the track, then adjust parameters and expressions as needed.</value>
+  </data>
+  <data name="Help.Step.Export.Title" xml:space="preserve">
+    <value>Save and export</value>
+  </data>
+  <data name="Help.Step.Export.Desc" xml:space="preserve">
+    <value>Save the project as .ustx, or export audio from “More Actions → Export”.</value>
+  </data>
+  <data name="Help.Faq.Title" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="Help.Faq.Slice.Q" xml:space="preserve">
+    <value>I'm coming from the old version. How do I create a part?</value>
+  </data>
+  <data name="Help.Faq.Slice.A" xml:space="preserve">
+    <value>Double-tap the track to create one.</value>
+  </data>
+  <data name="Help.Faq.Voicebank.Q" xml:space="preserve">
+    <value>Why can't I use a voice bank I installed?</value>
+  </data>
+  <data name="Help.Faq.Voicebank.A" xml:space="preserve">
+    <value>You may have chosen the wrong encoding during installation. Try other encodings until no garbled characters appear.</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.Q" xml:space="preserve">
+    <value>The encoding looks correct, but the singer still won't produce sound.</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.A" xml:space="preserve">
+    <value>Try a different phonemizer. For Japanese voice banks, use “JA VCV&amp;CVVC”; for Chinese, use “ZH CVVC”. For DIFFSINGER voice banks, try a phonemizer marked “DIFFS”.</value>
+  </data>
+  <data name="Help.Faq.Import.Q" xml:space="preserve">
+    <value>Can I import local projects?</value>
+  </data>
+  <data name="Help.Faq.Import.A" xml:space="preserve">
+    <value>Yes, but currently only ust, ustx, and midi are supported. For other formats (such as svp or vsqx), convert them first with UTAFormatix3: https://sdercolin.github.io/utaformatix3/</value>
+  </data>
+  <data name="Help.Faq.Apple.Q" xml:space="preserve">
+    <value>How can I use it on Apple devices?</value>
+  </data>
+  <data name="Help.Faq.Apple.A" xml:space="preserve">
+    <value>For now you have to build an IPA package yourself. Installing it also requires jailbreaking (sideloading carries risks, and Apple is restricting such practices).</value>
+  </data>
+  <data name="Help.Resources.Title" xml:space="preserve">
+    <value>More resources</value>
+  </data>
+  <data name="Help.Link.Repository" xml:space="preserve">
+    <value>Project home</value>
+  </data>
+  <data name="Help.Link.Repository.Desc" xml:space="preserve">
+    <value>Browse source code, updates, and release notes</value>
+  </data>
+  <data name="Help.Link.Issues" xml:space="preserve">
+    <value>Report an issue</value>
+  </data>
+  <data name="Help.Link.Issues.Desc" xml:space="preserve">
+    <value>Report bugs or suggest features</value>
+  </data>
+  <data name="Help.Toast.OpenLinkFailed" xml:space="preserve">
+    <value>Unable to open link</value>
   </data>
   <data name="Options.Toast.ExportLogNotImpl" xml:space="preserve">
     <value>Log export not implemented yet</value>

@@ -967,8 +967,95 @@
   <data name="Options.About.Desc" xml:space="preserve">
     <value>バージョン、ライセンス、クレジット</value>
   </data>
-  <data name="Options.Toast.HelpNotImpl" xml:space="preserve">
-    <value>ヘルプページは未実装です</value>
+  <data name="Help.Title" xml:space="preserve">
+    <value>ヘルプとチュートリアル</value>
+  </data>
+  <data name="Help.Intro" xml:space="preserve">
+    <value>プロジェクトの作成から音声の書き出しまで、よく使う操作とFAQをまとめました。</value>
+  </data>
+  <data name="Help.QuickStart.Title" xml:space="preserve">
+    <value>クイックスタート</value>
+  </data>
+  <data name="Help.Step.New.Title" xml:space="preserve">
+    <value>プロジェクトを作成・開く</value>
+  </data>
+  <data name="Help.Step.New.Desc" xml:space="preserve">
+    <value>ホームで「新規」をタップして空のプロジェクトまたはテンプレートから作成するか、「開く」で既存の .ustx ファイルを読み込みます。</value>
+  </data>
+  <data name="Help.Step.Singer.Title" xml:space="preserve">
+    <value>シンガーをインストール</value>
+  </data>
+  <data name="Help.Step.Singer.Desc" xml:space="preserve">
+    <value>ホームの「シンガー」、または「オプション → 依存関係管理」からボイスバンクと依存関係をインストールします。</value>
+  </data>
+  <data name="Help.Step.Note.Title" xml:space="preserve">
+    <value>ノートを編集</value>
+  </data>
+  <data name="Help.Step.Note.Desc" xml:space="preserve">
+    <value>ピアノロールでノートを追加して歌詞を入力し、ドラッグで音高と長さを調整します。</value>
+  </data>
+  <data name="Help.Step.Render.Title" xml:space="preserve">
+    <value>レンダリングを選択</value>
+  </data>
+  <data name="Help.Step.Render.Desc" xml:space="preserve">
+    <value>トラックごとにシンガー、音素化器、レンダラーを選び、必要に応じてパラメータと表情を調整します。</value>
+  </data>
+  <data name="Help.Step.Export.Title" xml:space="preserve">
+    <value>保存と書き出し</value>
+  </data>
+  <data name="Help.Step.Export.Desc" xml:space="preserve">
+    <value>プロジェクトを .ustx として保存するか、「その他の操作 → 書き出し」から音声を書き出します。</value>
+  </data>
+  <data name="Help.Faq.Title" xml:space="preserve">
+    <value>よくある質問</value>
+  </data>
+  <data name="Help.Faq.Slice.Q" xml:space="preserve">
+    <value>旧バージョンから来ました。パートはどうやって作成しますか？</value>
+  </data>
+  <data name="Help.Faq.Slice.A" xml:space="preserve">
+    <value>トラックをダブルタップすると作成できます。</value>
+  </data>
+  <data name="Help.Faq.Voicebank.Q" xml:space="preserve">
+    <value>インストールした音声ライブラリが使えないのはなぜですか？</value>
+  </data>
+  <data name="Help.Faq.Voicebank.A" xml:space="preserve">
+    <value>インストール時に文字コードを間違えた可能性があります。文字化けがなくなるまで他の文字コードを試してください。</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.Q" xml:space="preserve">
+    <value>文字コードは正しいのに、シンガーが発声しません。</value>
+  </data>
+  <data name="Help.Faq.Phonemizer.A" xml:space="preserve">
+    <value>音素化器を変更してみてください。日本語音声ライブラリには「JA VCV&amp;CVVC」、中国語には「ZH CVVC」がおすすめです。DIFFSINGER 音声ライブラリの場合は「DIFFS」と付いた音素化器を試してください。</value>
+  </data>
+  <data name="Help.Faq.Import.Q" xml:space="preserve">
+    <value>ローカルのプロジェクトをインポートできますか？</value>
+  </data>
+  <data name="Help.Faq.Import.A" xml:space="preserve">
+    <value>できますが、現在は ust、ustx、midi のみ対応しています。svp や vsqx などの形式は、先に UTAFormatix3 で変換してください：https://sdercolin.github.io/utaformatix3/</value>
+  </data>
+  <data name="Help.Faq.Apple.Q" xml:space="preserve">
+    <value>Apple デバイスではどう使いますか？</value>
+  </data>
+  <data name="Help.Faq.Apple.A" xml:space="preserve">
+    <value>現時点では自力で IPA パッケージをビルドする必要があります。インストールには脱獄も必要です（サイドロードにはリスクがあり、Apple はこうした行為を制限しています）。</value>
+  </data>
+  <data name="Help.Resources.Title" xml:space="preserve">
+    <value>その他のリソース</value>
+  </data>
+  <data name="Help.Link.Repository" xml:space="preserve">
+    <value>プロジェクトホーム</value>
+  </data>
+  <data name="Help.Link.Repository.Desc" xml:space="preserve">
+    <value>ソースコード、更新情報、リリースノートを見る</value>
+  </data>
+  <data name="Help.Link.Issues" xml:space="preserve">
+    <value>問題を報告</value>
+  </data>
+  <data name="Help.Link.Issues.Desc" xml:space="preserve">
+    <value>不具合の報告や機能提案</value>
+  </data>
+  <data name="Help.Toast.OpenLinkFailed" xml:space="preserve">
+    <value>リンクを開けません</value>
   </data>
   <data name="Options.Toast.ExportLogNotImpl" xml:space="preserve">
     <value>ログエクスポートは未実装です</value>
