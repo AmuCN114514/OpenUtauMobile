@@ -1,0 +1,106 @@
+name: Test APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      package_name:
+        description: Android application id
+        required: true
+        default: amucn.a114514.oum.canary
+      version:
+        description: versionName
+        required: true
+        default: 2.0.9-canary.407
+      build_number:
+        description: versionCode
+        required: true
+        default: '20086'
+
+permissions:
+  contents: read
+
+env:
+  AVALONIA_TELEMETRY_OPTOUT: "1"
+
+jobs:
+  android-arm64:
+    name: Android ARM64 test APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          log-accepted-android-sdk-licenses: false
+
+      - name: Install Android workload
+        run: dotnet workload install android
+
+      - name: Setup native Bazel build tools
+        uses: ./.github/actions/setup-worldline
+
+      - name: Install Android NDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          NDK_VERSION="$(tr -d '\r\n' < native/game/android-ndk-version.txt)"
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:?Android SDK is required}}"
+          sdkmanager --sdk_root="$SDK_ROOT" "ndk;$NDK_VERSION"
+          echo "OPUM_ANDROID_NDK=$SDK_ROOT/ndk/$NDK_VERSION" >> "$GITHUB_ENV"
+
+      - name: Restore
+        shell: bash
+        run: |
+          dotnet restore OpenUtauMobile.Android/OpenUtauMobile.Android.csproj \
+            -r android-arm64 \
+            -p:UseMonoRuntime=true \
+            -p:Configuration=Release \
+            -p:BaseApplicationId='${{ inputs.package_name }}'
+
+      - name: Publish
+        shell: bash
+        run: |
+          dotnet publish OpenUtauMobile.Android/OpenUtauMobile.Android.csproj \
+            --no-restore \
+            -c Release \
+            -f net10.0-android36.0 \
+            -r android-arm64 \
+            -p:UseMonoRuntime=true \
+            -p:Version='${{ inputs.version }}' \
+            -p:BuildNumber='${{ inputs.build_number }}' \
+            -p:BaseApplicationId='${{ inputs.package_name }}' \
+            -p:AndroidNdkDirectory="$OPUM_ANDROID_NDK" \
+            -p:AndroidPackageFormat=apk \
+            -p:AndroidKeyStore=false
+
+      - name: Verify
+        shell: bash
+        run: |
+          set -euo pipefail
+          PUBLISH_DIR="OpenUtauMobile.Android/bin/Release/net10.0-android36.0/android-arm64/publish"
+          find "$PUBLISH_DIR" -maxdepth 1 -name '*.apk' -printf '%f %s bytes\n'
+          python native/verify-android-runtime.py "$(find "$PUBLISH_DIR" -maxdepth 1 -name '*-Signed.apk' -print -quit)" android-arm64
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-apk-arm64
+          path: OpenUtauMobile.Android/bin/Release/net10.0-android36.0/android-arm64/publish/*-Signed.apk
+          if-no-files-found: error
